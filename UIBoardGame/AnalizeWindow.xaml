@@ -1,0 +1,49 @@
+﻿<Window x:Class="UIBoardGame.AnalizeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIBoardGame"
+        mc:Ignorable="d"
+        Title="AnalizeBoardGame" Height="500" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="FloralWhite">
+            <TextBlock x:Name="txtbl" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Board Game" FontSize="50" FontFamily="Times New Roman" Foreground="IndianRed"></TextBlock>
+        </Grid>
+        <DataGrid x:Name="datagrid" Grid.Row="1" AutoGenerateColumns="False" Background="AliceBlue" FontFamily="Times New Roman">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="type" Header="Тип" Binding="{Binding Type}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="name" Header="Название" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="numplayers" Header="Количество игроков" Binding="{Binding NumberPlayers}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="agelimit" Header="Возрастное ограничение" Binding="{Binding AgeLimit}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="des" Header="Описание" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="numbercards" Header="Количество карт"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="numbercardseachplayer" Header="Количество карт у каждого игрока"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="resourcetypes" Header="Типы ресурсов"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="storagecapacity" Header="Вместимость хранилища"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="duration" Header="Продолжительность"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="isteambased" Header="Командная игра"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="rating" Header="Рейтинг" Binding="{Binding Rating}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="tbminplayers" Header="Среднее мини. игроков" Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="tbmaxpayers" Header="Среднее мaк. игроков" Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="tbplayers" Header="Среднее игроков" Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="tbage" Header="Среднее воз. ограничений" Visibility="Collapsed"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+            <Button x:Name="analyze" Content="Анализ" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15" Click="analyze_Click" FontFamily="Times New Roman" Background="SteelBlue" Foreground="AntiqueWhite"></Button>
+            <Button x:Name="cardgamebard" Content="Полные данные Cardgame" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" FontSize="15" Click="Button_Click_1" FontFamily="Times New Roman" Background="SteelBlue" Foreground="AntiqueWhite" Cursor="Hand"></Button>
+            <Button x:Name="eurogameboard" Content="Полные данные Eurogame" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15" Click="Button_Click_2" FontFamily="Times New Roman" Background="SteelBlue" Foreground="AntiqueWhite" Cursor="Hand"></Button>
+            <Button x:Name="partygameboard" Content="Полные данные PartyGame" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="15" Click="Button_Click_3" FontFamily="Times New Roman" Background="SteelBlue" Foreground="AntiqueWhite" Cursor="Hand"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20">
+            <Button x:Name="addbtn" Content="Добавить" HorizontalAlignment="Right" Margin="0,0,0,10" FontSize="15" Click="addbtn_Click" FontFamily="Times New Roman" Background="ForestGreen" Foreground="AntiqueWhite" Cursor="Hand"></Button>
+            <Button x:Name="deletebtn" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Удалить" FontSize="15" Click="Button_Click" FontFamily="Times New Roman" Background="IndianRed" Foreground="AntiqueWhite" Cursor="Hand"></Button>
+            <Button x:Name="mainboard" Content="Oбщая таблица" HorizontalAlignment="Right" Margin="0,10,0,0" Click="Button_Click_4" FontSize="15" FontFamily="Times New Roman" Background="PaleVioletRed" Foreground="AntiqueWhite" Cursor="Hand"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

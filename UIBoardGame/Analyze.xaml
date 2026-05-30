@@ -1,0 +1,23 @@
+﻿<Window x:Class="UIBoardGame.Analyze"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIBoardGame"
+        mc:Ignorable="d"
+        Title="Analyze" Height="500" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Background="FloralWhite"></Label>
+        <TextBlock Grid.Row="0" Text="Анализ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Times New Roman" Foreground="IndianRed"></TextBlock>
+        <StackPanel Grid.Row="1" Background="AliceBlue">
+            <TextBlock x:Name="tbmin" Text="Среднее значение минимальных игроков: " FontSize="20" FontFamily="Times New Roman" Margin="10" Foreground="IndianRed"></TextBlock>
+            <TextBlock x:Name="tbmax" Text="Среднее значение максимальных игроков: " FontSize="20" FontFamily="Times New Roman" Margin="10,0,0,10" Foreground="IndianRed"></TextBlock>
+            <TextBlock x:Name="tbplayers" Text="Среднее значение игроков: " FontSize="20" FontFamily="Times New Roman" Margin="10,0,0,10" Foreground="IndianRed"></TextBlock>
+            <TextBlock x:Name="tbage" Text="Среднее значение возрастного ограничения: " FontFamily="Times New Roman" FontSize="20" Margin="10,0,0,0" Foreground="IndianRed"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

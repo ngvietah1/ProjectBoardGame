@@ -1,0 +1,42 @@
+﻿<Window x:Class="UIBoardGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIBoardGame"
+        mc:Ignorable="d"
+        Title="BoardGame" Height="600" Width="1000">
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Border Margin="5" CornerRadius="20">
+                <Border.Background>
+                    <ImageBrush x:Name="mainwinimage2" Stretch="UniformToFill"></ImageBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Column="0">
+                <TextBlock Height="100" VerticalAlignment="Top" Text="Настольная игра" FontSize="50" TextAlignment="Center" Padding="15" Foreground="LightGoldenrodYellow" FontFamily="Times New Roman" FontWeight="UltraLight"></TextBlock>
+                <ComboBox x:Name="cbb" Height="Auto" DisplayMemberPath="Name" SelectionChanged="cbb_SelectionChanged" Cursor="Hand" Width="Auto" Margin="30,0,30,0" FontFamily="Times New Roman" FontSize="15"></ComboBox>
+                <ComboBox x:Name="cbbtype" Height="auto" SelectionChanged="cbbtype_SelectionChanged" Cursor="Hand" Width="Auto" Margin="30,30,30,0" FontFamily="Times New Roman" FontSize="15"></ComboBox>
+                <Slider x:Name="slider" Height="auto" Width="auto" Cursor="Hand" Margin="30,30,30,0" Minimum="0" Maximum="10" TickFrequency="1" TickPlacement="BottomRight" AutoToolTipPlacement="TopLeft" ValueChanged="slider_ValueChanged"></Slider>
+                <TextBox x:Name="tbage" Height="auto" Width="auto" Margin="30,30,30,0" FontSize="15" FontFamily="Times New Roman" Text="Возрастное ограничение" FontStyle="Italic" TextChanged="tbage_TextChanged"></TextBox>
+                <ComboBox x:Name="cbbsave" Height="Auto" SelectionChanged="cbbsave_SelectionChanged" Cursor="Hand" Width="Auto" Margin="30,30,30,0" FontFamily="Times New Roman" FontSize="15"></ComboBox>
+            </StackPanel>
+            <Button x:Name="btnctl" VerticalAlignment="Bottom" HorizontalAlignment="Left" Cursor="Hand" Content="Открыть каталог" Margin="20" FontFamily="Times New Roman" FontSize="20" Height="50" Background="FloralWhite" Foreground="IndianRed" Click="btnctl_Click"></Button>
+            <Button x:Name="btnsave" VerticalAlignment="Bottom" HorizontalAlignment="Right" Cursor="Hand" Content="Сохранить" Margin="20" FontFamily="Times New Roman" FontSize="20" Height="50" Background="FloralWhite" Foreground="IndianRed" Click="btnsave_Click"></Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Border Margin="5" CornerRadius="20">
+                <Border.Background>
+                    <ImageBrush x:Name="mainwinimage" Stretch="UniformToFill"></ImageBrush>
+                </Border.Background>
+            </Border>
+            <TextBlock x:Name="txtbl" Text="Выбери игру" VerticalAlignment="Top" Padding="15" TextAlignment="Center" FontSize="50" TextWrapping="Wrap" FontFamily="Times New Roman" FontWeight="Light" Foreground="LightGoldenrodYellow"></TextBlock>
+            <Button x:Name="btnshowinfo" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Content="Показать данные" Cursor="Hand" FontFamily="Times New Roman" FontSize="20" Click="btnshowinfo_Click" Background="FloralWhite" Foreground="IndianRed"></Button>
+            <Button x:Name="btnreset" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20" Content="Начальный массив" FontFamily="Times New Roman" Cursor="Hand" FontSize="20" Height="50" Background="FloralWhite" Foreground="IndianRed" Click="btnreset_Click"></Button>
+        </Grid>
+    </Grid>
+</Window>

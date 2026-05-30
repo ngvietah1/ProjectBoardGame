@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ProjectBoardGame/Model.csproj" />
+  <Project Path="UIBoardGame/UIBoardGame.csproj" />
+</Solution>

@@ -1,4 +1,4 @@
-﻿using Model.Core;
+using Model.Core;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +12,7 @@ namespace Model.Data
         public override void Serialize(IGameCatalog catalog)
         {
             List<DTOBoardGame> list=new List<DTOBoardGame>();
+            File.WriteAllText(FilePath, "");
             foreach(var i in catalog.Catalog)
             {
                 if (i.GetType().Name == "CardGame")
@@ -39,6 +40,7 @@ namespace Model.Data
             if (!File.Exists(FilePath)) return null;
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(DTO));
             DTO tmp = null;
+            string content = File.ReadAllText(FilePath);
             using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             {
                 tmp = xmlSerializer.Deserialize(fs) as DTO;

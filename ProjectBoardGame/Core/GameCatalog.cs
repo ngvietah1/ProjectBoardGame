@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
@@ -106,8 +106,19 @@ namespace Model.Core
                     }
                     else if (strings[i].Contains("Description"))
                     {
-                        string[] tmp = strings[i].Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
-                        dict["Description"] = tmp[1].Trim(new char[] { ' ', '"', ',' });
+                        string[] tmp = strings[i].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                        string des = "";
+                        for (int j = 1; j < tmp.Length; j++)
+                        {
+                            des += tmp[j];
+                            if (j != tmp.Length - 1)
+                            {
+                                des += " ";
+                            }
+                        }
+                        des = des.Replace(@"\""", @"""");
+                        des = des.Trim(new char[] { ' ', '"', ',' });
+                        dict["Description"] = des;
                     }
                     else if (strings[i].Contains("StorageCapacity"))
                     {
